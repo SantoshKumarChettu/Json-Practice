@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Html example</title>
+<body>
+<button id="btn">Click here for Ajax</button>
+<div >Ajax data will appear on Console</div>
+<script>
+var btn=document.getElementById("btn");
+btn.addEventListener("click",function(){
+				let xhr= new XMLHttpRequest();
+				xhr.getResponseHeader("Content-type", "application/json");
+				xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+				xhr.onreadystatechange=function(){
+								if(xhr.readyState==4){
+									console.log(xhr.responseText);
+								}
+							}
+				xhr.send();
+
+				});
+</script>
+</body>
+</html>
